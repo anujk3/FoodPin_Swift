@@ -74,7 +74,36 @@ class RestaurantTableViewController: UITableViewController {
         return cell
     }
     
-
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
+    // Called after the user changes the selection.
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
+        // Create an option menu using actionsheet
+        let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: UIAlertControllerStyle.ActionSheet);
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel , handler: nil)
+        optionMenu.addAction(cancelAction)
+        
+        let callActionHandler = { (action: UIAlertAction!) -> Void in
+            let alertMessage = UIAlertController(title: "Service Unavailable", message: "Sorry, feature disabled", preferredStyle: UIAlertControllerStyle.Alert)
+            let alertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+            alertMessage.addAction(alertAction)
+            self.presentViewController(alertMessage, animated: true, completion: nil)
+        }
+        
+        let callAction = UIAlertAction(title: "Call " + "123-000-\(indexPath.row)", style: UIAlertActionStyle.Default, handler: callActionHandler)
+        optionMenu.addAction(callAction)
+        
+        let isVisitedAction = UIAlertAction(title: "I've been here", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) -> Void in
+            let cell = tableView.cellForRowAtIndexPath(indexPath)
+            cell?.accessoryType = UITableViewCellAccessoryType.Checkmark
+            })
+        optionMenu.addAction(isVisitedAction)
+        self.presentViewController(optionMenu, animated: true, completion: nil);
+        
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
