@@ -84,22 +84,23 @@ class RestaurantTableViewController: UITableViewController {
         let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: UIAlertControllerStyle.ActionSheet);
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel , handler: nil)
         optionMenu.addAction(cancelAction)
-        
-        let callActionHandler = { (action: UIAlertAction!) -> Void in
-            let alertMessage = UIAlertController(title: "Service Unavailable", message: "Sorry, feature disabled", preferredStyle: UIAlertControllerStyle.Alert)
-            let alertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
-            alertMessage.addAction(alertAction)
+
+        let callActionHandler = { (action:UIAlertAction!) -> Void in
+            let alertMessage = UIAlertController(title: "Service Unavailable", message: "Sorry, the call feature is not available yet. Please retry later", preferredStyle: UIAlertControllerStyle.Alert)
+            alertMessage.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alertMessage, animated: true, completion: nil)
         }
         
-        let callAction = UIAlertAction(title: "Call " + "123-000-\(indexPath.row)", style: UIAlertActionStyle.Default, handler: callActionHandler)
+        let callAction = UIAlertAction(title: "Call " + "123-000-\(indexPath.row)", style: UIAlertActionStyle.Default, handler: callActionHandler);
         optionMenu.addAction(callAction)
         
-        let isVisitedAction = UIAlertAction(title: "I've been here", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) -> Void in
+        let isVisitedAction = UIAlertAction(title: "I've been here", style: UIAlertActionStyle.Default) { (action: UIAlertAction!) -> Void in
             let cell = tableView.cellForRowAtIndexPath(indexPath)
-            cell?.accessoryType = UITableViewCellAccessoryType.Checkmark
-            })
+            cell?.accessoryType = UITableViewCellAccessoryType.Checkmark;
+        }
         optionMenu.addAction(isVisitedAction)
+        
+        
         self.presentViewController(optionMenu, animated: true, completion: nil);
         
     }
