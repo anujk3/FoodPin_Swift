@@ -99,10 +99,9 @@ class RestaurantTableViewController: UITableViewController {
             cell?.accessoryType = UITableViewCellAccessoryType.Checkmark;
         }
         optionMenu.addAction(isVisitedAction)
-        
-        
         self.presentViewController(optionMenu, animated: true, completion: nil);
         
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     /*
