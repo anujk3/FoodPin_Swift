@@ -25,6 +25,8 @@ class RestaurantTableViewController: UITableViewController {
         "American / Seafood", "American", "American", "Breakfast & Brunch", "Coffee & Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish",
         "Spanish", "British", "Thai"]
     
+    var restaurantIsVisted = [Bool](count: 21, repeatedValue: false)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
