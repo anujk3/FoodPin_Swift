@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="XSV-Mx-Q2r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4uj-9Z-bQc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--Restaurant Table View Controller-->
+        <!--Food Pin-->
         <scene sceneID="YfG-xW-jMr">
             <objects>
                 <tableViewController id="XSV-Mx-Q2r" customClass="RestaurantTableViewController" customModule="FoodPin_Swift" customModuleProvider="target" sceneMemberID="viewController">
@@ -50,6 +50,7 @@
                                     <outlet property="nameLabel" destination="U8Y-4B-rrV" id="QFp-fL-Ng9"/>
                                     <outlet property="thumbnailImageView" destination="fHG-4i-Hvq" id="gJL-mt-Bct"/>
                                     <outlet property="typeLabel" destination="jwj-nG-Lnp" id="voO-ke-jNl"/>
+                                    <segue destination="BoG-a7-Wje" kind="push" identifier="showRestaurantDetail" id="e2e-df-6m4"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -58,8 +59,54 @@
                             <outlet property="delegate" destination="XSV-Mx-Q2r" id="7Au-bL-8dZ"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Food Pin" id="QKe-Ia-PbW"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="reF-5t-mnI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="662" y="391"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="P8K-dt-xXb">
+            <objects>
+                <viewController id="BoG-a7-Wje" customClass="DetailViewController" customModule="FoodPin_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hDM-XB-uT3"/>
+                        <viewControllerLayoutGuide type="bottom" id="LU0-Bu-Q3Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qO6-qp-55Z">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SZp-bJ-KbG">
+                                <rect key="frame" x="0.0" y="159" width="320" height="250"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yK5-SK-XgU"/>
+                    <connections>
+                        <outlet property="restaurantImageView" destination="SZp-bJ-KbG" id="pov-To-5Mc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fnp-Qd-JcG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1051" y="391"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6Uj-uC-DWe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4uj-9Z-bQc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fKx-hf-Ixq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XSV-Mx-Q2r" kind="relationship" relationship="rootViewController" id="TcY-Ve-SIe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XGw-TY-wxk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="247" y="391"/>
         </scene>

@@ -74,7 +74,6 @@ class RestaurantTableViewController: UITableViewController {
         
         cell.locationLabel.text = restaurantLocations[indexPath.row]
         cell.typeLabel.text = restaurantLocations[indexPath.row]
-        cell.favIconImageView.hidden = false;
         
         if (self.restaurantIsVisited[indexPath.row] == true){
             cell.favIconImageView.hidden = false
@@ -93,6 +92,7 @@ class RestaurantTableViewController: UITableViewController {
     }
     
     // Called after the user changes the selection.
+    /*
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         // Create an option menu using actionsheet
         let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: UIAlertControllerStyle.ActionSheet);
@@ -131,7 +131,7 @@ class RestaurantTableViewController: UITableViewController {
         self.presentViewController(optionMenu, animated: true, completion: nil);
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-    }
+    }*/
     
     /*
     // Override to support conditional editing of the table view.
@@ -209,14 +209,16 @@ class RestaurantTableViewController: UITableViewController {
     }
     */
     
-    /*
+    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+        
+        
     }
-    */
+    
     
 }
