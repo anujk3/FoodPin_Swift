@@ -31,6 +31,8 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         // Change the separator color
         self.tableView.separatorColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.8)
         
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
