@@ -16,6 +16,7 @@
 		653C940F1A09431300366CA0 /* FoodPin_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653C940E1A09431300366CA0 /* FoodPin_SwiftTests.swift */; };
 		653C94191A0945F200366CA0 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653C94181A0945F200366CA0 /* CustomTableViewCell.swift */; };
 		653C941B1A09465000366CA0 /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653C941A1A09465000366CA0 /* RestaurantTableViewController.swift */; };
+		65DD53061A13DC2D00EAC5E9 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DD53051A13DC2D00EAC5E9 /* DetailTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		653C940E1A09431300366CA0 /* FoodPin_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPin_SwiftTests.swift; sourceTree = "<group>"; };
 		653C94181A0945F200366CA0 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		653C941A1A09465000366CA0 /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
+		65DD53051A13DC2D00EAC5E9 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			children = (
 				653C93F81A09431300366CA0 /* AppDelegate.swift */,
 				653C93FC1A09431300366CA0 /* Main.storyboard */,
+				65DD53051A13DC2D00EAC5E9 /* DetailTableViewCell.swift */,
 				650CEFF21A13744100DD4936 /* DetailViewController.swift */,
 				653C941A1A09465000366CA0 /* RestaurantTableViewController.swift */,
 				650CEFF41A139DBD00DD4936 /* Restaurant.swift */,
@@ -221,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65DD53061A13DC2D00EAC5E9 /* DetailTableViewCell.swift in Sources */,
 				650CEFF51A139DBE00DD4936 /* Restaurant.swift in Sources */,
 				653C94191A0945F200366CA0 /* CustomTableViewCell.swift in Sources */,
 				653C93F91A09431300366CA0 /* AppDelegate.swift in Sources */,
