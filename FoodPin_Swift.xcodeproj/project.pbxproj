@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		650CEFF31A13744100DD4936 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650CEFF21A13744100DD4936 /* DetailViewController.swift */; };
+		650CEFF51A139DBE00DD4936 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650CEFF41A139DBD00DD4936 /* Restaurant.swift */; };
 		653C93F91A09431300366CA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653C93F81A09431300366CA0 /* AppDelegate.swift */; };
 		653C93FE1A09431300366CA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653C93FC1A09431300366CA0 /* Main.storyboard */; };
 		653C94001A09431300366CA0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653C93FF1A09431300366CA0 /* Images.xcassets */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		650CEFF21A13744100DD4936 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		650CEFF41A139DBD00DD4936 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		653C93F31A09431300366CA0 /* FoodPin_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPin_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		653C93F71A09431300366CA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		653C93F81A09431300366CA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				653C93FC1A09431300366CA0 /* Main.storyboard */,
 				650CEFF21A13744100DD4936 /* DetailViewController.swift */,
 				653C941A1A09465000366CA0 /* RestaurantTableViewController.swift */,
+				650CEFF41A139DBD00DD4936 /* Restaurant.swift */,
 				653C94181A0945F200366CA0 /* CustomTableViewCell.swift */,
 				653C93FF1A09431300366CA0 /* Images.xcassets */,
 				653C94011A09431300366CA0 /* LaunchScreen.xib */,
@@ -218,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				650CEFF51A139DBE00DD4936 /* Restaurant.swift in Sources */,
 				653C94191A0945F200366CA0 /* CustomTableViewCell.swift in Sources */,
 				653C93F91A09431300366CA0 /* AppDelegate.swift in Sources */,
 				653C941B1A09465000366CA0 /* RestaurantTableViewController.swift in Sources */,

@@ -216,7 +216,12 @@ class RestaurantTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-        
+        if segue.identifier == "showRestaurantDetail" {
+            if let indexPath = self.tableView.indexPathForSelectedRow() {
+                let destinationViewController = segue.destinationViewController as DetailViewController
+                destinationViewController.restaurantImage = self.restaurantImages[indexPath.row];
+            }
+        }
         
     }
     
