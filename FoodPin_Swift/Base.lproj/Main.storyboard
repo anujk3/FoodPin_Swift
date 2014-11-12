@@ -39,9 +39,13 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="fLE-Ze-PU5">
+                                            <rect key="frame" x="281" y="7" width="23" height="23"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="favIconImageView" destination="fLE-Ze-PU5" id="MbN-Up-WHw"/>
                                     <outlet property="locationLabel" destination="tXU-kM-82J" id="vrN-Ov-C9N"/>
                                     <outlet property="nameLabel" destination="U8Y-4B-rrV" id="QFp-fL-Ng9"/>
                                     <outlet property="thumbnailImageView" destination="fHG-4i-Hvq" id="gJL-mt-Bct"/>
@@ -60,6 +64,9 @@
             <point key="canvasLocation" x="247" y="391"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="heart" width="64" height="64"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -74,11 +74,14 @@ class RestaurantTableViewController: UITableViewController {
         
         cell.locationLabel.text = restaurantLocations[indexPath.row]
         cell.typeLabel.text = restaurantLocations[indexPath.row]
+        cell.favIconImageView.hidden = false;
         
         if (self.restaurantIsVisited[indexPath.row] == true){
-            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+            cell.favIconImageView.hidden = false
+            //cell.accessoryType = UITableViewCellAccessoryType.Checkmark
         }else{
-            cell.accessoryType = UITableViewCellAccessoryType.None;
+            cell.favIconImageView.hidden = true;
+            //cell.accessoryType = UITableViewCellAccessoryType.None;
         }
         
         
@@ -109,14 +112,16 @@ class RestaurantTableViewController: UITableViewController {
         let isVisitedTitle = self.restaurantIsVisited[indexPath.row] ? "Oops" : "I've been here";
         
         let isVisitedAction = UIAlertAction(title: isVisitedTitle, style: UIAlertActionStyle.Default) { (action: UIAlertAction!) -> Void in
-            let cell = tableView.cellForRowAtIndexPath(indexPath)
+            let cell = tableView.cellForRowAtIndexPath(indexPath) as CustomTableViewCell
             
             if self.restaurantIsVisited[indexPath.row] == true {
-                cell?.accessoryType = UITableViewCellAccessoryType.None;
+                cell.favIconImageView.hidden = true;
+                //cell?.accessoryType = UITableViewCellAccessoryType.None;
                 self.restaurantIsVisited[indexPath.row] = false;
             }else{
+                cell.favIconImageView.hidden = false;
                 self.restaurantIsVisited[indexPath.row] = true;
-                cell?.accessoryType = UITableViewCellAccessoryType.Checkmark;
+                //cell?.accessoryType = UITableViewCellAccessoryType.Checkmark;
             }
             
         }
