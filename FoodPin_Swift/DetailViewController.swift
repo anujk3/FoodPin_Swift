@@ -22,7 +22,14 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         // Do any additional setup after loading the view.
         self.restaurantImageView.image = UIImage(named: restaurant.image)
         
+        // To change the background color of a table View
         self.tableView.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.2)
+        
+        // Remove the extra rows in the bottom of the table view
+        self.tableView.tableFooterView = UIView(frame: CGRectZero)
+        
+        // Change the separator color
+        self.tableView.separatorColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.8)
         
     }
 
