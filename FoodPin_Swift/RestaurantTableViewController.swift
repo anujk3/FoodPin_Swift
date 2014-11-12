@@ -11,7 +11,7 @@ import UIKit
 class RestaurantTableViewController: UITableViewController {
     
     var restaurants:[Restaurant] = [
-        Restaurant(name: "Cafe Deadend", type: "Coffee & Tea Shop", location: "Coffee & Tea Shop", image: "Hong Kong", isVisited: false),
+        Restaurant(name: "Cafe Deadend", type: "Coffee & Tea Shop", location: "Hong Kong", image: "cafedeadend.jpg", isVisited: false),
         Restaurant(name: "Homei", type: "Cafe", location: "Hong Kong", image: "homei.jpg", isVisited: false),
         Restaurant(name: "Teakha", type: "Tea House", location: "Hong Kong", image:"teakha.jpg", isVisited: false),
         Restaurant(name: "Cafe loisl", type: "Austrian / Causual Drink", location: "Hong Kong", image: "cafeloisl.jpg", isVisited: false),
@@ -43,8 +43,6 @@ class RestaurantTableViewController: UITableViewController {
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        println(self.restaurantIsVisited);
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -63,7 +61,7 @@ class RestaurantTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return self.restaurantNames.count
+        return self.restaurants.count
     }
     
     
@@ -73,17 +71,17 @@ class RestaurantTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as CustomTableViewCell
         
         // Configure the cell...
-        cell.nameLabel.text = restaurantNames[indexPath.row]
-        cell.thumbnailImageView.image = UIImage(named: restaurantImages[indexPath.row])
+        cell.nameLabel.text = restaurants[indexPath.row].name
+        cell.thumbnailImageView.image = UIImage(named: restaurants[indexPath.row].image)
         
         cell.thumbnailImageView.layer.cornerRadius = 10
         //cell.thumbnailImageView.layer.cornerRadius = cell.thumbnailImageView.frame.size.width/2
         cell.thumbnailImageView.clipsToBounds = true
         
-        cell.locationLabel.text = restaurantLocations[indexPath.row]
-        cell.typeLabel.text = restaurantLocations[indexPath.row]
+        cell.locationLabel.text = restaurants[indexPath.row].location
+        cell.typeLabel.text = restaurants[indexPath.row].type
         
-        if (self.restaurantIsVisited[indexPath.row] == true){
+        if (self.restaurants[indexPath.row].isVisited == true){
             cell.favIconImageView.hidden = false
             //cell.accessoryType = UITableViewCellAccessoryType.Checkmark
         }else{
@@ -154,14 +152,10 @@ class RestaurantTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
-            println(self.restaurantIsVisited.removeAtIndex(indexPath.row))
-            println(self.restaurantLocations.removeAtIndex(indexPath.row))
-            println(self.restaurantNames.removeAtIndex(indexPath.row))
-            println(self.restaurantTypes.removeAtIndex(indexPath.row))
-            println(self.restaurantImages.removeAtIndex(indexPath.row))
+            self.restaurants.removeAtIndex(indexPath.row)
         }
         
-        println("Total elements in array are \(restaurantImages.count)")
+        println("Total elements in array are \(restaurants.count)")
 //        for name in restaurantNames{
 //            println(name)
 //        }
@@ -190,12 +184,7 @@ class RestaurantTableViewController: UITableViewController {
         var deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Delete") { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
             
             //Delete the rows
-            self.restaurantNames.removeAtIndex(indexPath.row)
-            self.restaurantIsVisited.removeAtIndex(indexPath.row)
-            self.restaurantImages.removeAtIndex(indexPath.row)
-            self.restaurantLocations.removeAtIndex(indexPath.row)
-            self.restaurantTypes.removeAtIndex(indexPath.row)
-            
+            self.restaurants.removeAtIndex(indexPath.row)
             self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
         }
         deleteAction.backgroundColor = UIColor(red: 51.0/255.0, green: 51.0/255.0, blue: 51.0/255.0, alpha: 1.0)
@@ -227,7 +216,7 @@ class RestaurantTableViewController: UITableViewController {
         if segue.identifier == "showRestaurantDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 let destinationViewController = segue.destinationViewController as DetailViewController
-                destinationViewController.restaurantImage = self.restaurantImages[indexPath.row];
+                destinationViewController.restaurantImage = self.restaurants[indexPath.row].image;
             }
         }
         
