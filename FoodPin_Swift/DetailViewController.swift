@@ -31,14 +31,28 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         // Change the separator color
         self.tableView.separatorColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.8)
         
-        
-        
+        //Set title of Navigation controller
+        self.title = self.restaurant.name
+
+        tableView.estimatedRowHeight = 36.0;
+        tableView.rowHeight = UITableViewAutomaticDimension;
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.hidesBarsOnSwipe = false
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+//    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+//        return UIStatusBarStyle.LightContent;
+//    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4;
